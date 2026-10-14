@@ -178,7 +178,7 @@ export default function PerformanceDashboard() {
 
         <Reveal direction="up" delay={0.2}>
           <p className="mt-8 text-center text-xs uppercase tracking-wide text-mist/50">
-            * Painel ilustrativo — números de demonstração, não representam resultados reais de clientes.
+            * Exemplo do painel de acompanhamento que cada cliente recebe — números ilustrativos.
           </p>
         </Reveal>
       </div>

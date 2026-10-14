@@ -7,8 +7,8 @@ export const site = {
   hours: "Segunda a sexta, das 08h às 17h",
   instagramHandle: "brunosarkozi.ads",
   instagramUrl: "https://instagram.com/brunosarkozi.ads",
-  whatsappNumber: "5581988104769",
-  whatsappDisplay: "81 98810-4769",
+  whatsappNumber: "5581985540488",
+  whatsappDisplay: "81 98554-0488",
 } as const;
 
 const DEFAULT_WHATSAPP_MESSAGE =

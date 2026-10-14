@@ -43,13 +43,13 @@ export default function AboutSection() {
               BRUNO SARKOZI
             </h2>
             <p className="mt-3 text-sm font-medium uppercase tracking-wide text-cyan sm:text-base">
-              Fundador da Meta Digital · Gestão de Tráfego Pago
+              Especialista em Tráfego Pago · Piscinas de Fibra
             </p>
           </Reveal>
 
           <Reveal direction="up" delay={0.2}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
-              Sou fundador da Meta Digital e meu trabalho é ajudar
+              Sou especialista em tráfego pago e meu trabalho é ajudar
               empresários a transformar anúncios em oportunidades reais de
               negócio, utilizando estratégia, dados e tráfego pago.
             </p>

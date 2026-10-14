@@ -1,16 +1,26 @@
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { buildWhatsAppLink } from "@/lib/site-config";
 
-const fields = ["Cliente", "Investimento", "Leads", "CPL", "Vendas", "ROAS"];
-
-const placeholders = [
-  "CASE EM BREVE",
-  "SEU RESULTADO PODE ESTAR AQUI",
-  "CASE EM BREVE",
-];
+// Case real (nome e numeros autorizados pela cliente)
+const megaSol = {
+  client: "Mega Sol Piscinas",
+  city: "Recife - PE",
+  channels: "Google Ads · Meta Ads",
+  highlights: [
+    { label: "Antes", value: "até 3", detail: "piscinas vendidas por mês" },
+    { label: "Hoje", value: "+10", detail: "piscinas vendidas por mês" },
+    { label: "Toda semana", value: "+300", detail: "potenciais novos clientes" },
+  ],
+  googleAds: [
+    { label: "Cliques nos anúncios", value: "423" },
+    { label: "Pessoas querendo ir até a loja", value: "212" },
+    { label: "Ligações recebidas", value: "32" },
+  ],
+  googleAdsPeriod: "Google Ads · 21/09 a 12/10",
+};
 
 export default function ResultsSection() {
   return (
@@ -30,8 +40,8 @@ export default function ResultsSection() {
 
         <Reveal direction="up" delay={0.15}>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
-            Esta operação está em construção de portfólio. Os espaços abaixo
-            estão reservados para os próximos cases de clientes reais.
+            Resultados reais de uma loja de piscinas de fibra que confiou o tráfego pago à
+            nossa operação.
           </p>
         </Reveal>
 
@@ -48,35 +58,55 @@ export default function ResultsSection() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {placeholders.map((placeholder, i) => (
-            <Reveal key={i} direction="up" delay={0.08 * i}>
-              <div className="relative h-full rounded-2xl border border-dashed border-white/15 bg-white/[0.015] p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-mist">
-                  <Sparkles size={16} />
+        <Reveal direction="up" delay={0.1} className="mt-10">
+          <div className="relative rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-10">
+            <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/30 text-cyan">
+                  <TrendingUp size={20} />
                 </div>
-
-                <p className="mt-6 font-display text-lg font-bold uppercase tracking-wide text-white/70">
-                  {placeholder}
-                </p>
-
-                <div className="mt-6 space-y-2.5 border-t border-white/10 pt-5">
-                  {fields.map((field) => (
-                    <div key={field} className="flex items-center justify-between text-sm">
-                      <span className="text-mist">{field}</span>
-                      <span className="font-mono text-white/30">— — —</span>
-                    </div>
-                  ))}
+                <div>
+                  <p className="font-display text-xl font-bold uppercase tracking-wide sm:text-2xl">
+                    {megaSol.client}
+                  </p>
+                  <p className="text-sm text-mist">{megaSol.city}</p>
                 </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+              <span className="w-fit rounded-full border border-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wide text-mist">
+                {megaSol.channels}
+              </span>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {megaSol.highlights.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                  <p className="text-xs uppercase tracking-wide text-mist">{item.label}</p>
+                  <p className="mt-2 font-display text-4xl font-bold text-gradient-blue sm:text-5xl">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-sm text-mist">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="text-xs uppercase tracking-wide text-mist/70">{megaSol.googleAdsPeriod}</p>
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {megaSol.googleAds.map((item) => (
+                  <div key={item.label} className="flex items-center justify-between text-sm sm:block">
+                    <span className="font-mono text-lg text-white sm:text-2xl">{item.value}</span>
+                    <span className="text-mist sm:mt-1 sm:block">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
 
         <Reveal direction="up" delay={0.3}>
           <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:flex-row sm:items-center">
             <p className="text-sm text-mist sm:text-base">
-              Quer ser um dos primeiros cases de sucesso da operação?
+              Quer resultados assim na sua loja de piscinas?
             </p>
             <a
               href={buildWhatsAppLink()}
